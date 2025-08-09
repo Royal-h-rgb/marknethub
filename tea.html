@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>MarkDataHub Offers</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Affordable data bundles from MarkDataHub with various validity periods. A trusted Bingwa ambassador.">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <!-- Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <style>
+    body {
+      font-family: 'Roboto', Arial, sans-serif;
+      background-color: #1BAF1B; /* Safaricom green */
+      color: #FFFFFF; /* White for better contrast */
+      margin: 0;
+      padding: 20px;
+      text-align: center;
+    }
+    h1 {
+      margin-bottom: 10px;
+      font-size: 2.5em;
+    }
+    p.tagline {
+      font-size: 1.2em;
+      margin-bottom: 20px;
+    }
+    .offer {
+      background: white;
+      color: #1BAF1B;
+      margin: 15px auto;
+      padding: 20px;
+      border-radius: 10px;
+      max-width: 320px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      transition: transform 0.2s;
+    }
+    .offer:hover {
+      transform: translateY(-5px);
+    }
+    .offer h2 {
+      margin: 5px 0;
+      font-size: 1.5em;
+    }
+    .offer p {
+      margin: 5px 0 15px;
+      font-size: 1em;
+    }
+    .offer input[type="checkbox"] {
+      margin-right: 10px;
+    }
+    .btn {
+      display: inline-block;
+      padding: 10px 20px;
+      background-color: #1BAF1B;
+      color: white;
+      text-decoration: none;
+      border-radius: 25px;
+      font-weight: bold;
+      transition: background-color 0.3s ease, transform 0.2s;
+      cursor: pointer;
+    }
+    .btn:hover {
+      background-color: #148F14;
+      transform: scale(1.05);
+    }
+    .whatsapp-btn {
+      background-color: #25D366; /* WhatsApp green */
+      margin: 20px auto;
+      padding: 12px 30px;
+      font-size: 1.1em;
+    }
+    .buy-selected {
+      margin: 20px auto;
+      padding: 12px 30px;
+      font-size: 1.1em;
+    }
+    footer {
+      margin-top: 40px;
+      font-size: 14px;
+    }
+    footer a {
+      color: #FFFFFF;
+      text-decoration: underline;
+    }
+    /* Modal Styles */
+    .modal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.5);
+      align-items: center;
+      justify-content: center;
+      z-index: 1000;
+    }
+    .modal-content {
+      background: white;
+      color: #1BAF1B;
+      padding: 20px;
+      border-radius: 10px;
+      max-width: 90%;
+      width: 400px;
+      text-align: left;
+      position: relative;
+    }
+    .modal-content h3 {
+      margin-top: 0;
+    }
+    .close {
+      position: absolute;
+      top: 10px;
+      right: 15px;
+      font-size: 20px;
+      cursor: pointer;
+      color: #1BAF1B;
+    }
+    .transaction-form {
+      margin-top: 15px;
+    }
+    .transaction-form label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: bold;
+    }
+    .transaction-form input {
+      width: 100%;
+      padding: 8px;
+      margin-bottom: 10px;
+      border: 1px solid #1BAF1B;
+      border-radius: 5px;
+    }
+    .transaction-form button {
+      width: 100%;
+      padding: 10px;
+      background-color: #1BAF1B;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .transaction-form button:hover {
+      background-color: #148F14;
+    }
+    /* Responsive Design */
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 1.8em;
+      }
+      p.tagline {
+        font-size: 1em;
+      }
+      .offer {
+        max-width: 100%;
+        margin: 10px;
+      }
+      .btn {
+        padding: 8px 16px;
+        font-size: 0.9em;
+      }
+      .modal-content {
+        width: 90%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <h1><i class="fas fa-mobile-alt"></i> MarkDataHub Offers</h1>
+  <p class="tagline">Affordable data bundles and smart deals. A trusted Bingwa ambassador. Instant delivery</p>
+
+  <div class="offer" aria-label="1.5GB Data Bundle Offer">
+    <input type="checkbox" class="offer-check" value="1.5GB for Ksh 50 (3hrs)" data-amount="50" aria-label="Select 1.5GB for Ksh 50 valid for 3 hours">
+    <h2>1.5GB for Ksh 50</h2>
+    <p>Valid for 3 hours</p>
+    <button class="btn" onclick="showPaymentModal('1.5GB for Ksh 50 (3hrs)', 50)"><i class="fas fa-shopping-cart"></i> Buy Now</button>
+  </div>
+
+  <div class="offer" aria-label="350MB Data Bundle Offer">
+    <input type="checkbox" class="offer-check" value="350MB for Ksh 50 (7days)" data-amount="50" aria-label="Select 350MB for Ksh 50 valid for 7 days">
+    <h2>350MB for Ksh 50</h2>
+    <p>Valid for 7 days</p>
+    <button class="btn" onclick="showPaymentModal('350MB for Ksh 50 (7days)', 50)"><i class="fas fa-shopping-cart"></i> Buy Now</button>
+  </div>
+
+  <div class="offer" aria-label="2.5GB Data Bundle Offer">
+    <input type="checkbox" class="offer-check" value="2.5GB for Ksh 300 (7days)" data-amount="300" aria-label="Select 2.5GB for Ksh 300 valid for 7 days">
+    <h2>2.5GB for Ksh 300</h2>
+    <p>Valid for 7 days</p>
+    <button class="btn" onclick="showPaymentModal('2.5GB for Ksh 300 (7days)', 300)"><i class="fas fa-shopping-cart"></i> Buy Now</button>
+  </div>
+
+  <div class="offer" aria-label="6GB Data Bundle Offer">
+    <input type="checkbox" class="offer-check" value="6GB for Ksh 700 (7days)" data-amount="700" aria-label="Select 6GB for Ksh 700 valid for 7 days">
+    <h2>6GB for Ksh 700</h2>
+    <p>Valid for 7 days</p>
+    <button class="btn" onclick="showPaymentModal('6GB for Ksh 700 (7days)', 700)"><i class="fas fa-shopping-cart"></i> Buy Now</button>
+  </div>
+
+  <div class="offer" aria-label="1GB Data Bundle Offer (1 hour)">
+    <input type="checkbox" class="offer-check" value="1GB for Ksh 20 (1hr)" data-amount="20" aria-label="Select 1GB for Ksh 20 valid for 1 hour">
+    <h2>1GB for Ksh 20</h2>
+    <p>Valid for 1 hour</p>
+    <button class="btn" onclick="showPaymentModal('1GB for Ksh 20 (1hr)', 20)"><i class="fas fa-shopping-cart"></i> Buy Now</button>
+  </div>
+
+  <div class="offer" aria-label="250MB Data Bundle Offer">
+    <input type="checkbox" class="offer-check" value="250MB for Ksh 20 (24hrs)" data-amount="20" aria-label="Select 250MB for Ksh 20 valid for 24 hours">
+    <h2>250MB for Ksh 20</h2>
+    <p>Valid for 24 hours</p>
+    <button class="btn" onclick="showPaymentModal('250MB for Ksh 20 (24hrs)', 20)"><i class="fas fa-shopping-cart"></i> Buy Now</button>
+  </div>
+
+  <div class="offer" aria-label="1GB Data Bundle Offer (24 hours)">
+    <input type="checkbox" class="offer-check" value="1GB for Ksh 99 (24hrs)" data-amount="99" aria-label="Select 1GB for Ksh 99 valid for 24 hours">
+    <h2>1GB for Ksh 99</h2>
+    <p>Valid for 24 hours</p>
+    <button class="btn" onclick="showPaymentModal('1GB for Ksh 99 (24hrs)', 99)"><i class="fas fa-shopping-cart"></i> Buy Now</button>
+  </div>
+
+  <div class="offer" aria-label="1.25GB Data Bundle Offer">
+    <input type="checkbox" class="offer-check" value="1.25GB for Ksh 55 (till midnight)" data-amount="55" aria-label="Select 1.25GB for Ksh 55 valid till midnight">
+    <h2>1.25GB for Ksh 55</h2>
+    <p>Valid till midnight</p>
+    <button class="btn" onclick="showPaymentModal('1.25GB for Ksh 55 (till midnight)', 55)"><i class="fas fa-shopping-cart"></i> Buy Now</button>
+  </div>
+
+  <div class="offer" aria-label="Daily YouTube Bundle Offer">
+    <input type="checkbox" class="offer-check" value="Daily YouTube bundle for Ksh 10" data-amount="10" aria-label="Select Daily YouTube bundle for Ksh 10">
+    <h2>Daily YouTube Bundle</h2>
+    <p>Only Ksh 10</p>
+    <button class="btn" onclick="showPaymentModal('Daily YouTube bundle for Ksh 10', 10)"><i class="fas fa-shopping-cart"></i> Buy Now</button>
+  </div>
+
+  <button class="btn buy-selected" onclick="showSelectedPaymentModal()">Buy Selected Offers</button>
+  <a href="https://wa.me/254745553776" class="btn whatsapp-btn" target="_blank"><i class="fab fa-whatsapp"></i> Chat with Us</a>
+
+  <!-- Payment Modal -->
+  <div class="modal" id="paymentModal" role="dialog" aria-labelledby="paymentModalTitle" aria-hidden="true">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal()" aria-label="Close">&times;</span>
+      <h3 id="paymentModalTitle">Complete Your Payment</h3>
+      <p id="selectedOffers"></p>
+      <p><strong>Total Amount:</strong> Ksh <span id="totalAmount">0</span></p>
+      <p><strong>Step 1: Make Payment via M-Pesa</strong></p>
+      <ol>
+        <li>Open your M-Pesa app or dial *334#.</li>
+        <li>Select "Lipa na M-Pesa" > "Buy goods".</li>
+        <li>Enter Till No: <strong>3678366</strong>.</li>
+        <li>Enter Amount: Ksh <span id="modalAmount">0</span>.</li>
+        <li>Enter your M-Pesa PIN and confirm.</li>
+      </ol>
+      <form class="transaction-form" onsubmit="confirmPayment(event)">
+        <label for="transactionCode">Step 2: Enter M-Pesa Transaction Code</label>
+        <input type="text" id="transactionCode" name="transactionCode" placeholder="e.g., QZ1234567890" required>
+        <button type="submit">Confirm Payment</button>
+      </form>
+      <p><strong>Note:</strong> If you encounter issues, send the transaction code to <a href="https://wa.me/254745553776">0745553776</a> for assistance.</p>
+    </div>
+  </div>
+
+  <footer>
+    <p>Pay via Till 3678366 | For inquiries: <a href="https://wa.me/254745553776">WhatsApp 0745553776</a> | Call: 0745553776</p>
+    <p><a href="https://bingwastore.co.ke/MarkDataHub">bingwastore.co.ke/MarkDataHub</a> | &copy; 2025 MarkDataHub</p>
+  </footer>
+
+  <script>
+    function showPaymentModal(offer, amount) {
+      try {
+        const modal = document.getElementById('paymentModal');
+        const selectedOffers = document.getElementById('selectedOffers');
+        const totalAmount = document.getElementById('totalAmount');
+        const modalAmount = document.getElementById('modalAmount');
+        selectedOffers.textContent = `Selected Offer: ${offer}`;
+        totalAmount.textContent = amount;
+        modalAmount.textContent = amount;
+        modal.style.display = 'flex';
+        modal.setAttribute('aria-hidden', 'false');
+        document.getElementById('transactionCode').focus();
+      } catch (error) {
+        console.error('Error displaying payment modal:', error);
+        alert('An error occurred. Please try again or contact support at 0745553776.');
+      }
+    }
+
+    function showSelectedPaymentModal() {
+      try {
+        const selected = document.querySelectorAll('.offer-check:checked');
+        if (selected.length === 0) {
+          alert('Please select at least one offer.');
+          return;
+        }
+        let offers = '';
+        let total = 0;
+        selected.forEach((checkbox, index) => {
+          offers += checkbox.value;
+          total += parseInt(checkbox.getAttribute('data-amount'));
+          if (index < selected.length - 1) {
+            offers += ', ';
+          }
+        });
+        const modal = document.getElementById('paymentModal');
+        const selectedOffers = document.getElementById('selectedOffers');
+        const totalAmount = document.getElementById('totalAmount');
+        const modalAmount = document.getElementById('modalAmount');
+        selectedOffers.textContent = `Selected Offers: ${offers}`;
+        totalAmount.textContent = total;
+        modalAmount.textContent = total;
+        modal.style.display = 'flex';
+        modal.setAttribute('aria-hidden', 'false');
+        document.getElementById('transactionCode').focus();
+      } catch (error) {
+        console.error('Error displaying selected payment modal:', error);
+        alert('An error occurred. Please try again or contact support at 0745553776.');
+      }
+    }
+
+    function confirmPayment(event) {
+      event.preventDefault();
+      const transactionCode = document.getElementById('transactionCode').value.trim();
+      const offers = document.getElementById('selectedOffers').textContent;
+      const amount = document.getElementById('totalAmount').textContent;
+      const codeRegex = /^[A-Z0-9]{10,12}$/;
+      if (!codeRegex.test(transactionCode)) {
+        alert('Please enter a valid M-Pesa transaction code (10-12 alphanumeric characters).');
+        return;
+      }
+      alert(`Payment confirmed for ${offers} with Transaction Code: ${transactionCode}. Amount: Ksh ${amount}. We will process your bundle shortly.`);
+      closeModal();
+    }
+
+    function closeModal() {
+      const modal = document.getElementById('paymentModal');
+      modal.style.display = 'none';
+      modal.setAttribute('aria-hidden', 'true');
+      document.getElementById('transactionCode').value = '';
+    }
+
+    // Close modal when clicking outside
+    window.onclick = function(event) {
+      const modal = document.getElementById('paymentModal');
+      if (event.target === modal) {
+        closeModal();
+      }
+    };
+
+    // Close modal with Escape key
+    document.addEventListener('keydown', function(event) {
+      if (event.key === 'Escape') {
+        closeModal();
+      }
+    });
+  </script>
+</body>
+</html>
